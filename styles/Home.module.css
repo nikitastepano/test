@@ -1,0 +1,472 @@
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  font-family: var(--font-geist-sans);
+  background-color: #1B152A;
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  .headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .logo {
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .title {
+      font-size: 20px;
+      color: orange;
+      background: linear-gradient(to right, orange, red);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: background-position 0.5s ease;
+      background-size: 200% 100%;
+      background-position: 0 0;
+      cursor: pointer;
+      &:hover {
+        background-position: 100% 0;
+      }
+    }
+  }
+  .buttonContainer {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  .button {
+    color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: rgba(255, 165, 0, 0.5);
+    border: 2px solid orange;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+      filter: blur(10px);
+      transition: left 0.5s;
+    }
+    &:hover::before {
+      left: 70%;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgba(138, 43, 226, 0.25), transparent,  transparent, rgba(0, 0, 255, 0.25));
+  .bonusText {
+    display: none;
+  }
+  .textContainer {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.075);
+    border-radius: 10px;
+    .text {
+      padding: 5px 10px;
+      font-size: 20px;
+      color: white;
+    }
+    .dotsContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .dots {
+        padding-left: 10px;
+        font-size: 30px;
+        display: flex;
+        gap: 2px;
+        .dot {
+          color: white;
+          opacity: 0.5;
+          cursor: pointer;
+        }
+        .activeDot {
+          color: white;
+          opacity: 1;
+        }
+      }
+      .image {
+        border-radius: 10px;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+.bonus {
+  width: 80%;
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.075);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  .bonusText {
+    padding: 10px;
+    color: #00ff00;
+    display: flex;
+    .bonusTextTitle {
+      position: absolute;
+      font-size: 18px;
+      .bonusTextTitlePlus {
+        color: white;
+      }
+    }
+    .bonusButton {
+      color: white;
+      background-color: rgba(255, 165, 0, 0.5);
+      border: 2px solid orange;
+      border-radius: 10px;
+      padding: 5px 10px;
+      align-self: flex-end;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+        filter: blur(10px);
+        transition: left 0.5s;
+      }
+      &:hover::before {
+        left: 70%;
+      }
+    }
+  }
+}
+
+.topGames {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  .topGamesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .topGamesTitle {
+      color: white;
+    }
+  }
+  .topGamesImages {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .topGamesImage {
+      border-radius: 10px;
+      transition: 0.5s;
+      cursor: pointer;
+      &:hover {
+        scale: 1.15;
+      }
+    }
+  }
+}
+
+.thisIs {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  .thisIsTitle {
+    color: white;
+    font-size: 16px;
+  }
+  .thisIsText {
+    color: white;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .footerText {
+    color: white;
+  }
+}
+
+.footerImage {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    .title {
+      font-size: 24px;
+    }
+    .buttonContainer {
+      padding: 0;
+      display: flex;
+    }
+  }
+
+  .buttonContainer {
+    display: none;
+  }
+
+  .main {
+    .bonusText {
+      height: 119px;
+      width: 200px;
+      display: block;
+      background-color: rgba(255, 255, 255, 0.075);
+      border-radius: 10px;
+      .bonusTextTitle {
+        padding-top: 10px;
+        padding-left: 10px;
+        position: absolute;
+        color: #00ff00;
+        font-size: 16px;
+        .bonusTextTitlePlus {
+          color: white;
+        }
+      }
+      .bonusContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 19px;
+        .bonusButton {
+          margin-left: 10px;
+          margin-bottom: 10px;
+          align-self: flex-end;
+          height: 35px;
+          color: white;
+          padding: 5px 10px;
+          font-size: 16px;
+          background-color: rgba(255, 165, 0, 0.5);
+          border: 2px solid orange;
+          border-radius: 10px;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            filter: blur(10px);
+            transition: left 0.5s;
+          }
+          &:hover::before {
+            left: 70%;
+          }
+        }
+      }
+    }
+    .monkey {
+      width: 250px;
+      height: 225px;
+    }
+    .textContainer {
+      width: 200px;
+      .text {
+        font-size: 24px;
+      }
+      .dotsContainer {
+        .dots {
+          font-size: 36px;
+        }
+        .image {
+          width: 120px;
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  .bonus {
+    display: none;
+  }
+
+  .topGames {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .topGamesContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .topGamesTitle {
+        font-size: 24px;
+      }
+    }
+    .topGamesImages {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      .topGamesImage {
+        width: 125px;
+        height: 125px;
+        &:hover {
+          scale: 1.2;
+        }
+      }
+    }
+  }
+
+  .thisIs {
+    margin: 20px auto;
+    flex-direction: row;
+    gap: 30px;
+    .thisIsTitle {
+      font-size: 16px;
+    }
+    .thisIsText {
+      font-size: 20px;
+    }
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .footerImage {
+    display: block;
+    width: 100%;
+    height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 0 40px;
+    height: 120px;
+    .title {
+      font-size: 28px;
+    }
+    .buttonContainer {
+      display: flex;
+    }
+  }
+
+  .main {
+    .bonusText {
+      height: 150px;
+      width: 250px;
+      .bonusTextTitle {
+        font-size: 18px;
+      }
+      .bonusContainer {
+        margin-top: 49px;
+        .bonusButton {
+          height: 40px;
+          font-size: 18px;
+        }
+      }
+    }
+    .monkey {
+      width: 350px;
+      height: 290px;
+    }
+    .textContainer {
+      width: 250px;
+      .text {
+        font-size: 28px;
+      }
+      .dotsContainer {
+        .dots {
+          font-size: 40px;
+        }
+        .image {
+          width: 150px;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  .topGames {
+    .topGamesContainer {
+      .topGamesTitle {
+        font-size: 28px;
+      }
+    }
+    .topGamesImages {
+      gap: 35px;
+      .topGamesImage {
+        width: 200px;
+        height: 200px;
+        &:hover {
+          scale: 1.25;
+        }
+      }
+    }
+  }
+
+  .thisIs {
+    display: flex;
+    flex-direction: column;
+    .thisIsTitle {
+      font-size: 18px;
+    }
+    .thisIsText {
+      font-size: 24px;
+    }
+  }
+
+  .footerImage {
+    height: 250px;
+  }
+}
+
+.footerTitle {
+  color: white;
+  margin-top: 10px auto;
+  text-align: center;
+}
+
+.footerText {
+  color: white;
+  margin-top: 10px auto;
+  text-align: center;
+}
